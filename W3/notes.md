@@ -27,3 +27,25 @@ this is non persistance storage -> basically stop session lose data -> solution 
 Drawback -> 1. slower 
             2. 2 VMs cannot access tha same EBS -> Solution EFS { similar to NFS (Network file system) Shared Network Drive, But EFS is Amazon's}
 
+USER DATA: 
+ allows bash script -> runs onces after creating VM 
+
+Line 1 -> installs apache webserver
+http-> apache webserver httpd-> http Deamon 
+
+Line2 -> enable deamon Deamons are Background services running (Its not attached to any session so if you close app it wont stop running , there are other managers for deamons)
+systemctl is a command line for the httpd
+
+line 4 -> echo '....' {is like printing ....} 
+```
+#!/bin/bash
+dnf install -y httpd
+systemctl enable httpd
+systemctl start httpd
+echo '<html><h1>Hello From Your Web Server!</h1></html>' > /var/www/html/index.html
+```
+
+You can edit inbound rules under security group to anywhere IPV4 (allow everyone dont use in real world)
+
+
+If you want to resize -> first STOP Instance under instance state -> wait to stop-> Actions instance settings -> change instance type -> t2.small
