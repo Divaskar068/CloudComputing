@@ -1,7 +1,7 @@
 Lab 3 : Intro to EC2
 
 This is elastic compute -> more of computation rather than storage
-use Amazon Linux 2023 kernel 6.1 as AMI 
+use Amazon Linux 2023 kernel 6.1 as AMI (Amazon Machine Image)
 
 64 bit (x86) is more intel and slightly outdated -> dominant 5 years back 
 64 bit (arm) -> more smart phone based architecture -> consider faster while consuming less energy 
